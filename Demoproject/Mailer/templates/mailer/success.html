@@ -1,0 +1,42 @@
+<!-- mailer/templates/mailer/success.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emails Sent</title>
+    <style>
+        .form{
+            background-color:powderblue;
+            padding-top: 10px;
+            align-items: center;
+            margin-top: 10px;
+
+        }
+        .form h1{
+            text-align:center;
+            color:blue;
+            font-weight:25px;
+        }
+        .form p{
+            text-align:center;
+            font-size:20px;
+        }
+        .form ul{
+            font-size:18px
+        }
+
+    </style>
+</head>
+<body>
+    <div class = "form">
+    <h1>Emails Sent Successfully!</h1>
+    <p>Emails were sent to the following addresses:</p>
+    <ul>
+        {% for email in emails %}
+        <li>{{ email }}</li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>

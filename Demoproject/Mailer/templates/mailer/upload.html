@@ -1,0 +1,49 @@
+<!-- mailer/templates/mailer/upload.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Files</title>
+    <style>
+        .form{
+            background-color:powderblue;
+            height: 600px;
+            width:800px;
+            padding-top: 150px;
+            text-align: center;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 400px;
+        }
+        button{
+            margin-top:30px;
+            padding:px;
+            height:50px;
+            width:100px;
+            background-color:DodgerBlue; 
+            border-radius: 10px; 
+        }
+        button:hover {
+            background-color: #04AA6D;
+            color: white;
+          }
+
+    </style>
+</head>
+<body>
+    <div class = "form">
+    <h1>Upload Excel File and HTML Template</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Send Email</button>
+    </form>
+    {% comment %} <form method="post" action="{% url 'send_emails' %}">
+        {% csrf_token %}
+        <button type="submit">Send Emails</button>
+    </form> {% endcomment %}
+</div>
+</body>
+</html>

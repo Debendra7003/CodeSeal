@@ -1,0 +1,18 @@
+<!-- mailer/templates/mailer/success.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emails Sent</title>
+</head>
+<body>
+    <h1>Emails Sent Successfully!</h1>
+    <p>Emails were sent to the following addresses:</p>
+    <ul>
+        {% for email in emails %}
+        <li>{{ email }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
